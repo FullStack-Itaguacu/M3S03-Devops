@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import { Map } from "../components/Map";
 
 const ListaEstablecimento = () => {
   return (
-    <div>ListaEstablecimento</div>
-  )
-}
+    <div>
+      <Map />
+    </div>
+  );
+};
 
-export default ListaEstablecimento
+export default ListaEstablecimento;
