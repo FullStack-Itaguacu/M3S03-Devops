@@ -1,8 +1,11 @@
 import React from 'react'
+import FormCadastroEstablecimento from '../components/FormCadastroEstablecimento'
 
 const CadastroEstablecimento = () => {
   return (
-    <div>CadastroEstablecimento</div>
+    <div>
+      <FormCadastroEstablecimento/>
+    </div>
   )
 }
 
