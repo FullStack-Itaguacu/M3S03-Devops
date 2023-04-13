@@ -1,0 +1,77 @@
+{
+  "produtos": [
+    {
+      "id": "AspirinaBayer10mg",
+      "medicamento": "Aspirina",
+      "laboratorio": "Bayer",
+      "dosagem": "10mg",
+      "valorUnitario": "13",
+      "tipo": "Medicamento Comum",
+      "descricao": "uma descricao",
+      "imagem": "https://img.freepik.com/psd-gratuitas/marca-de-medicacao-e-maquete-de-embalagem_53876-65886.jpg?w=740&t=st=1681400504~exp=1681401104~hmac=37fc5b256fc392531a8a5ce3317a2aee9b9da27aa9ea9e05436b106bda239976"
+    },
+    {
+      "id": "DipironaBayer500mg",
+      "medicamento": "Dipirona",
+      "laboratorio": "Bayer",
+      "dosagem": "500mg",
+      "valorUnitario": "15",
+      "tipo": "Medicamento Comum",
+      "descricao": "outra descriçao",
+      "imagem": "https://img.freepik.com/psd-gratuitas/marca-de-medicacao-e-maquete-de-embalagem_53876-65886.jpg?w=740&t=st=1681400504~exp=1681401104~hmac=37fc5b256fc392531a8a5ce3317a2aee9b9da27aa9ea9e05436b106bda239976"
+    },
+    {
+      "id": "ViagraWyeth25mg",
+      "medicamento": "Viagra",
+      "laboratorio": "Wyeth",
+      "dosagem": "25mg",
+      "valorUnitario": "65",
+      "tipo": "Medicamento Controlado",
+      "descricao": "VIAGRA 50MG É UM MEDICAMENTO. SEU USO PODE TRAZER RISCOS. PROCURE UM MÉDICO OU UM FARMACÊUTICO. LEIA A BULA. MEDICAMENTOS PODEM CAUSAR EFEITOS INDESEJADOS. EVITE A AUTOMEDICAÇÃO: INFORME-SE COM O FARMACÊUTICO.",
+      "imagem": "https://img.freepik.com/psd-gratuitas/marca-de-medicacao-e-maquete-de-embalagem_53876-65886.jpg?w=740&t=st=1681400504~exp=1681401104~hmac=37fc5b256fc392531a8a5ce3317a2aee9b9da27aa9ea9e05436b106bda239976"
+    }
+  ],
+  "establecimentos": [
+    {
+      "razaoSocial": "LABPharmacy Inc",
+      "cnpj": "1312455-465456",
+      "nomeFantasia": "Farmacia do Ze",
+      "email": "farmacy1@labpharmacy.com",
+      "telefone": "483555-555",
+      "celular": "48988588895",
+      "endereco": "Hoepcke",
+      "cep": "88010-130",
+      "logradouro": "Rua",
+      "numero": "92",
+      "bairro": "Centro",
+      "cidade": "Florianopolis",
+      "estado": "SC",
+      "complemento": "",
+      "latitude": -27.5935,
+      "longitude": -48.55854
+    },
+   
+    {
+      "id": "784512010011",
+      "razaoSocial": "Razao Social xxx",
+      "cnpj": "784512010011",
+      "nomeFantasia": "Nome Fantasia",
+      "email": "email@farmacia.com",
+      "telefone": "489885555555",
+      "celular": "4895555555",
+      "cep": "88010300",
+      "logradouro": "Rua Tenente Silveira",
+      "numero": "60",
+      "complemento": "Complemento",
+      "bairro": "Centro",
+      "cidade": "Florianopolis",
+      "estado": "SC",
+      "latitude": "-27.5969",
+      "longitude": "-48.5495"
+    }
+  ],
+  "users": {
+    "email": "chavetasoft@gmail.com",
+    "senha": "123456"
+  }
+}
