@@ -112,7 +112,7 @@ const FormCadastroEstablecimento = () => {
         </Form.Group>
         <Form.Group as={Col} md="4" controlId="celular">
           <Form.Label>Celular</Form.Label>
-          <Form.Control required type="text" placeholder="DDNNNNNNNNN" />
+          <Form.Control required type="number" placeholder="DDNNNNNNNNN" />
           <Form.Control.Feedback>OK</Form.Control.Feedback>
           <Form.Control.Feedback type="invalid">
             Por favor preencha este campo com o numero de Celualr.

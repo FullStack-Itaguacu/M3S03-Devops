@@ -1,8 +1,11 @@
 import React from 'react'
+import FormCadastroProduto from '../components/FormCadastroProduto'
 
 const CadastroProduto = () => {
   return (
-    <div>CadastroProduto</div>
+    <div>
+      <FormCadastroProduto/>
+    </div>
   )
 }
 
