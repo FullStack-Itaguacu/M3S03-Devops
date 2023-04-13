@@ -1,9 +1,10 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Button, Row, Col, Form } from "react-bootstrap";
 
 const FormCadastroEstablecimento = () => {
   const [validated, setValidated] = useState(false);
+  const formCadEstRef = useRef(null);
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -36,10 +37,10 @@ const FormCadastroEstablecimento = () => {
         bairro: event.target.elements["bairro"].value,
         cidade: event.target.elements["cidade"].value,
         estado: event.target.elements["estado"].value,
-        latitude : event.target.elements["latitude"].value,
-        longitude : event.target.elements["longitude"].value,
+        latitude: event.target.elements["latitude"].value,
+        longitude: event.target.elements["longitude"].value,
       };
-      // Precisa modificar para chamar uma 
+      // Precisa modificar para chamar uma
       // funcao  addicionar um establecimento
       // ao banco de dados sejaLocalStorage ou json-server
       console.log(establecimento);
@@ -49,9 +50,19 @@ const FormCadastroEstablecimento = () => {
       event.target.reset();
     }
   };
+  // Limpa formulario utilizando referencia
+  const handleLimpar = (event) => {
+    event.preventDefault();
+    formCadEstRef.current.reset();
+  };
 
   return (
-    <Form noValidate validated={validated} onSubmit={handleSubmit}>
+    <Form
+      ref={formCadEstRef}
+      noValidate
+      validated={validated}
+      onSubmit={handleSubmit}
+    >
       <div className="d-flex justify-content-center">
         <h3>Cadastro de Establecimento</h3>
       </div>
@@ -185,7 +196,7 @@ const FormCadastroEstablecimento = () => {
       </Row>
       <div className="d-flex justify-content-end">
         <Button
-          href="/app/cadastroestablecimento"
+          onClick={handleLimpar}
           className="m-0"
           variant="outline-secondary"
           type="button"
