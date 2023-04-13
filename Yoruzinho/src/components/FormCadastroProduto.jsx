@@ -23,25 +23,7 @@ const FormCadastroProduto = () => {
     if (form.checkValidity() === true) {
       event.preventDefault();
     //captura de dados do formulario para criaçao de objeto produto
-    /*
-    Uma página de cadastro de medicamentos, contendo os campos:
-    a. Nome do medicamento (obrigatório)
-    b. Nome do laboratório (obrigatório)
-    c. Dosagem do medicamento (obrigatório)
-    d. Descrição do medicamento (opcional)
-    e. Preço unitário do medicamento (obrigatório)
-    f. Tipo do medicamento (obrigatório)
-    g. Realize o tratamento dos campos da seguinte forma:
-        i. Para a descrição, utilize <textarea/>
-        ii. Para o tipo, utilize <select/>
-        ● Medicamento controlado ou Medicamento comum
-        h. Ao cadastrar um novo medicamento, mostrar uma mensagem de feedback de
-        produto cadastrado com sucesso. Dica: Utilize o método onSubmit com
-        Try/Catch.
-        i. Salve os dados em localStorage ou utilize JSON-Server para simular uma API.
-        
-        
-        */
+  
       produto = {
         medicamento: event.target.elements["medicamento"].value,
         laboratorio: event.target.elements["laboratorio"].value,
@@ -138,15 +120,11 @@ const FormCadastroProduto = () => {
         <Form.Group as={Col} md="12" controlId="descricao">
             <Form.Label>Descrição</Form.Label>
             <Form.Control
-                required
                 as="textarea"
                 placeholder="Descrição"
             />
-            <Form.Control.Feedback>OK</Form.Control.Feedback>
-            <Form.Control.Feedback type="invalid">
-                Por favor preencha este campo com a Descrição.
-            </Form.Control.Feedback>
-        </Form.Group>
+            <Form.Control.Feedback>Opcional</Form.Control.Feedback>
+            </Form.Group>
 
       </Row>
     
