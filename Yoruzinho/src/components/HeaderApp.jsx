@@ -16,6 +16,7 @@ const HeaderApp = () => {
             <Link className="nav-link" to="/app">Farmacias</Link>
             <Link className="nav-link" to="/app/cadastroestablecimento ">Cadastrar Farmacia</Link>
             <Link className="nav-link" to="/app/cadastroproduto">Cadastrar Produto</Link>
+            <Link className="nav-link" to="/app/listaprodutos">Lista de Produtos</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
