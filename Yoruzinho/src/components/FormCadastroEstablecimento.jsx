@@ -1,11 +1,29 @@
 import React from "react";
 import { useState, useRef } from "react";
 import { Button, Row, Col, Form } from "react-bootstrap";
+import axios from "axios";
 
 const FormCadastroEstablecimento = () => {
   const [validated, setValidated] = useState(false);
   const formCadEstRef = useRef(null);
 
+  const postEstablecimento = (establecimento) => {
+    axios
+      .post("http://localhost:3000/establecimentos", establecimento)
+      .then((response) => {
+        alert(
+          `Establecimento  ${establecimento.nomeFantasia} foi adiccionado!`
+        );
+
+        console.log(response.data);
+      })
+      .catch((error) => {
+        alert(
+          `Infelizmente   ${establecimento.nomeFantasia} não foi adiccionado!`
+        );
+        console.log(error);
+      });
+  };
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     let establecimento;
@@ -24,10 +42,11 @@ const FormCadastroEstablecimento = () => {
       event.preventDefault();
       //captura de dados do formulario para criaçao de objeto establecimento
       establecimento = {
+        id: event.target.elements["cnpj"].value,
         razaoSocial: event.target.elements["razãosocial"].value,
         cnpj: event.target.elements["cnpj"].value,
         nomeFantasia: event.target.elements["nomeFantasia"].value,
-        eMail: event.target.elements["eMail"].value,
+        email: event.target.elements["email"].value,
         telefone: event.target.elements["telefone"].value,
         celular: event.target.elements["celular"].value,
         cep: event.target.elements["cep"].value,
@@ -43,8 +62,8 @@ const FormCadastroEstablecimento = () => {
       // Precisa modificar para chamar uma
       // funcao  addicionar um establecimento
       // ao banco de dados sejaLocalStorage ou json-server
-      console.log(establecimento);
-      alert(`Establecimento  ${establecimento.nomeFantasia} foi adiccionado!`);
+      // console.log(establecimento);
+      postEstablecimento(establecimento);
       //limpar formulario
       setValidated(false);
       event.target.reset();
@@ -93,7 +112,7 @@ const FormCadastroEstablecimento = () => {
         </Form.Group>
       </Row>
       <Row className="mb-3">
-        <Form.Group as={Col} md="4" controlId="eMail">
+        <Form.Group as={Col} md="4" controlId="email">
           <Form.Label>E-Mail</Form.Label>
           <Form.Control
             required
@@ -179,7 +198,12 @@ const FormCadastroEstablecimento = () => {
         </Form.Group>
         <Form.Group as={Col} md="4" controlId="latitude">
           <Form.Label>Latitude</Form.Label>
-          <Form.Control required type="number" placeholder="Latitude" />
+          <Form.Control
+            required
+            type="number"
+            step="0.0001"
+            placeholder="Latitude"
+          />
           <Form.Control.Feedback>OK</Form.Control.Feedback>
           <Form.Control.Feedback type="invalid">
             Por favor preencha este campo com Latitude.
@@ -187,7 +211,12 @@ const FormCadastroEstablecimento = () => {
         </Form.Group>
         <Form.Group as={Col} md="4" controlId="longitude">
           <Form.Label>Longitude</Form.Label>
-          <Form.Control required type="number" placeholder="Longitude" />
+          <Form.Control
+            required
+            type="number"
+            step="0.0001"
+            placeholder="Longitude"
+          />
           <Form.Control.Feedback>OK</Form.Control.Feedback>
           <Form.Control.Feedback type="invalid">
             Por favor preencha este campo com Longitude.

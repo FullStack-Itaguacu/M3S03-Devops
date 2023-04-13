@@ -1,127 +1,31 @@
 import React from "react";
 import CardProduto from "../components/CardProduto";
 import { Row, Container } from "react-bootstrap";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const ListaProdutos = () => {
-  //consulta fake a servidor retorna objeto com array de produtos
-  const produtos = [
-    {
-      medicamento: "Dipirona",
-      laboratorio: "Bayer",
-      dosagem: "500mg",
-      valorUnitario: 5.0,
-      tipo: "Medicamento Comum",
-      descricao:
-        "Dipirona é um medicamento analgésico e antipirético, usado no tratamento de dores leves a moderadas e febre.",
-      imagem:
-        "https://img.freepik.com/psd-gratuitas/marca-de-medicacao-e-maquete-de-embalagem_53876-65886.jpg?w=740&t=st=1681400504~exp=1681401104~hmac=37fc5b256fc392531a8a5ce3317a2aee9b9da27aa9ea9e05436b106bda239976",
-    },
-    {
-      medicamento: "Dipirona",
-      laboratorio: "Bayer",
-      dosagem: "500mg",
-      valorUnitario: 5.0,
-      tipo: "Medicamento Comum",
-      descricao:
-        "Dipirona é um medicamento analgésico e antipirético, usado no tratamento de dores leves a moderadas e febre.",
-      imagem:
-        "https://img.freepik.com/psd-gratuitas/marca-de-medicacao-e-maquete-de-embalagem_53876-65886.jpg?w=740&t=st=1681400504~exp=1681401104~hmac=37fc5b256fc392531a8a5ce3317a2aee9b9da27aa9ea9e05436b106bda239976",
-    },
-    {
-      medicamento: "Dipirona",
-      laboratorio: "Bayer",
-      dosagem: "500mg",
-      valorUnitario: 5.0,
-      tipo: "Medicamento Comum",
-      descricao:
-        "Dipirona é um medicamento analgésico e antipirético, usado no tratamento de dores leves a moderadas e febre.",
-      imagem:
-        "https://img.freepik.com/psd-gratuitas/marca-de-medicacao-e-maquete-de-embalagem_53876-65886.jpg?w=740&t=st=1681400504~exp=1681401104~hmac=37fc5b256fc392531a8a5ce3317a2aee9b9da27aa9ea9e05436b106bda239976",
-    },
-    {
-      medicamento: "Dipirona",
-      laboratorio: "Bayer",
-      dosagem: "500mg",
-      valorUnitario: 5.0,
-      tipo: "Medicamento Comum",
-      descricao:
-        "Dipirona é um medicamento analgésico e antipirético, usado no tratamento de dores leves a moderadas e febre.",
-      imagem:
-        "https://img.freepik.com/psd-gratuitas/marca-de-medicacao-e-maquete-de-embalagem_53876-65886.jpg?w=740&t=st=1681400504~exp=1681401104~hmac=37fc5b256fc392531a8a5ce3317a2aee9b9da27aa9ea9e05436b106bda239976",
-    },
-    {
-      medicamento: "Dipirona",
-      laboratorio: "Bayer",
-      dosagem: "500mg",
-      valorUnitario: 5.0,
-      tipo: "Medicamento Comum",
-      descricao:
-        "Dipirona é um medicamento analgésico e antipirético, usado no tratamento de dores leves a moderadas e febre.",
-      imagem:
-        "https://img.freepik.com/psd-gratuitas/marca-de-medicacao-e-maquete-de-embalagem_53876-65886.jpg?w=740&t=st=1681400504~exp=1681401104~hmac=37fc5b256fc392531a8a5ce3317a2aee9b9da27aa9ea9e05436b106bda239976",
-    },
-    {
-      medicamento: "Dipirona",
-      laboratorio: "Bayer",
-      dosagem: "500mg",
-      valorUnitario: 5.0,
-      tipo: "Medicamento Comum",
-      descricao:
-        "Dipirona é um medicamento analgésico e antipirético, usado no tratamento de dores leves a moderadas e febre.",
-      imagem:
-        "https://img.freepik.com/psd-gratuitas/marca-de-medicacao-e-maquete-de-embalagem_53876-65886.jpg?w=740&t=st=1681400504~exp=1681401104~hmac=37fc5b256fc392531a8a5ce3317a2aee9b9da27aa9ea9e05436b106bda239976",
-    },
-    {
-      medicamento: "Dipirona",
-      laboratorio: "Bayer",
-      dosagem: "500mg",
-      valorUnitario: 5.0,
-      tipo: "Medicamento Comum",
-      descricao:
-        "Dipirona é um medicamento analgésico e antipirético, usado no tratamento de dores leves a moderadas e febre.",
-      imagem:
-        "https://img.freepik.com/psd-gratuitas/marca-de-medicacao-e-maquete-de-embalagem_53876-65886.jpg?w=740&t=st=1681400504~exp=1681401104~hmac=37fc5b256fc392531a8a5ce3317a2aee9b9da27aa9ea9e05436b106bda239976",
-    },
-    {
-      medicamento: "Dipirona",
-      laboratorio: "Bayer",
-      dosagem: "500mg",
-      valorUnitario: 5.0,
-      tipo: "Medicamento Comum",
-      descricao:
-        "Dipirona é um medicamento analgésico e antipirético, usado no tratamento de dores leves a moderadas e febre.",
-      imagem:
-        "https://img.freepik.com/psd-gratuitas/marca-de-medicacao-e-maquete-de-embalagem_53876-65886.jpg?w=740&t=st=1681400504~exp=1681401104~hmac=37fc5b256fc392531a8a5ce3317a2aee9b9da27aa9ea9e05436b106bda239976",
-    },
-    {
-      medicamento: "Dipirona",
-      laboratorio: "Bayer",
-      dosagem: "500mg",
-      valorUnitario: 5.0,
-      tipo: "Medicamento Comum",
-      descricao:
-        "Dipirona é um medicamento analgésico e antipirético, usado no tratamento de dores leves a moderadas e febre.",
-      imagem:
-        "https://img.freepik.com/psd-gratuitas/marca-de-medicacao-e-maquete-de-embalagem_53876-65886.jpg?w=740&t=st=1681400504~exp=1681401104~hmac=37fc5b256fc392531a8a5ce3317a2aee9b9da27aa9ea9e05436b106bda239976",
-    },
-    {
-      medicamento: "Aspirina",
-      laboratorio: "Bayer",
-      dosagem: "500mg",
-      valorUnitario: 5.0,
-      tipo: "Medicamento raroi",
-      descricao:
-        "Dipirona é um medicamento analgésico e antipirético, usado no tratamento de dores leves a moderadas e febre.",
-      imagem:
-        "https://img.freepik.com/psd-gratuitas/marca-de-medicacao-e-maquete-de-embalagem_53876-65886.jpg?w=740&t=st=1681400504~exp=1681401104~hmac=37fc5b256fc392531a8a5ce3317a2aee9b9da27aa9ea9e05436b106bda239976",
-    },
-  ];
+  //consulta com axios ao json-server
+  const [produtos, setProdutos] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/produtos")
+      .then((response) => {
+        setProdutos(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   return (
     <Container>
       <h1>Lista de Produtos</h1>
       <Row>
         {produtos.map((produto) => (
           <CardProduto
+          key={produto.medicamento + produto.dosagem + produto.laboratorio}
             medicamento={produto.medicamento}
             dosagem={produto.dosagem}
             laboratorio={produto.laboratorio}

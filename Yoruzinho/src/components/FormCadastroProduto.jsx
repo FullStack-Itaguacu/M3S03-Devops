@@ -1,10 +1,25 @@
 import React from "react";
 import { useState, useRef } from "react";
 import { Button, Row, Col, Form } from "react-bootstrap";
+import axios from "axios";
 
 const FormCadastroProduto = () => {
   const [validated, setValidated] = useState(false);
   const formCadPrdRef = useRef(null);
+
+  //funcao para submeter formulario com axios e json-server
+  const postProduto = (produto) => {
+    axios.post('http://localhost:3000/produtos', produto)
+      .then((response) => {
+        alert(`Produto  ${produto.medicamento} foi adiccionado!`);
+
+        console.log(response.data);
+      })
+      .catch((error) => {
+        alert(`Infelizmente o roduto  ${produto.medicamento} não foi adiccionado!`);
+        console.log(error);
+      });
+  };
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -25,18 +40,19 @@ const FormCadastroProduto = () => {
     //captura de dados do formulario para criaçao de objeto produto
   
       produto = {
+        id: (event.target.elements["medicamento"].value )+ (event.target.elements["laboratorio"].value )+ (event.target.elements["dosagem"].value),
         medicamento: event.target.elements["medicamento"].value,
         laboratorio: event.target.elements["laboratorio"].value,
         dosagem: event.target.elements["dosagem"].value,
         valorUnitario: event.target.elements["valorUnitario"].value,
         tipo: event.target.elements["tipo"].value,
         descricao: event.target.elements["descricao"].value,
+        //poderia se desenvolver um sistema para upload de imagem
+        imagem: "https://img.freepik.com/psd-gratuitas/marca-de-medicacao-e-maquete-de-embalagem_53876-65886.jpg?w=740&t=st=1681400504~exp=1681401104~hmac=37fc5b256fc392531a8a5ce3317a2aee9b9da27aa9ea9e05436b106bda239976",
+
       };
-      // Precisa modificar para chamar uma
-      // funcao  addicionar um produto
-      // ao banco de dados sejaLocalStorage ou json-server
-      console.log(produto);
-      alert(`Produto  ${produto.medicamento} foi adiccionado!`);
+      // post produto na base de dados fake json-server
+      postProduto(produto);
       //limpar formulario
       setValidated(false);
       event.target.reset();
