@@ -6,7 +6,7 @@ const AppContainer = () => {
   return (
     <>
       <HeaderApp/>
-      <Outlet />
+      <Outlet/>
     </>
   );
 };
