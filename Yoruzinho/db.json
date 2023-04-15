@@ -123,6 +123,24 @@
       "estado": "99",
       "latitude": "-27.5965",
       "longitude": "-48.5602"
+    },
+    {
+      "id": "8886532521",
+      "razaoSocial": "LabPharmacy inc ",
+      "cnpj": "8886532521",
+      "nomeFantasia": "LabPharmacy Ingleses",
+      "email": "lefarmace@labpharmacy.com",
+      "telefone": "485556525",
+      "celular": "655665565656",
+      "cep": "88058354",
+      "logradouro": "Servidão do Gerivá",
+      "numero": "122",
+      "complemento": "Complemento",
+      "bairro": "Ingleses do Rio Vermelho",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "latitude": "-27.4539",
+      "longitude": "-48.4199"
     }
   ],
   "users": {
