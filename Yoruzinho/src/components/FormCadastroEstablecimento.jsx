@@ -1,86 +1,21 @@
-import React from "react";
-import { useState, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Button, Row, Col, Form } from "react-bootstrap";
-import axios from "axios";
+import { useContexto } from "../context/useContexto";
 
 const FormCadastroEstablecimento = () => {
-  const [validated, setValidated] = useState(false);
   const formCadEstRef = useRef(null);
+  const { handleSubmitEstablecimento, handleLimpar, validated, setValidated } = useContexto();
 
-  const postEstablecimento = (establecimento) => {
-    axios
-      .post("http://localhost:3000/establecimentos", establecimento)
-      .then((response) => {
-        alert(
-          `Establecimento  ${establecimento.nomeFantasia} foi adiccionado!`
-        );
-
-        console.log(response.data);
-      })
-      .catch((error) => {
-        alert(
-          `Infelizmente   ${establecimento.nomeFantasia} não foi adiccionado!`
-        );
-        console.log(error);
-      });
-  };
-  const handleSubmit = (event) => {
-    const form = event.currentTarget;
-    let establecimento;
-    //formulario nao valido
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    //mostra os errores dos imputs no formulario
-    setValidated(true);
-    event.preventDefault();
-
-    //quando formulario e valido cria um objeto establecimiento para   ser guardado na base de dados
-
-    if (form.checkValidity() === true) {
-      event.preventDefault();
-      //captura de dados do formulario para criaçao de objeto establecimento
-      establecimento = {
-        id: event.target.elements["cnpj"].value,
-        razaoSocial: event.target.elements["razãosocial"].value,
-        cnpj: event.target.elements["cnpj"].value,
-        nomeFantasia: event.target.elements["nomeFantasia"].value,
-        email: event.target.elements["email"].value,
-        telefone: event.target.elements["telefone"].value,
-        celular: event.target.elements["celular"].value,
-        cep: event.target.elements["cep"].value,
-        logradouro: event.target.elements["logradouro"].value,
-        numero: event.target.elements["numero"].value,
-        complemento: event.target.elements["complemento"].value,
-        bairro: event.target.elements["bairro"].value,
-        cidade: event.target.elements["cidade"].value,
-        estado: event.target.elements["estado"].value,
-        latitude: event.target.elements["latitude"].value,
-        longitude: event.target.elements["longitude"].value,
-      };
-      // Precisa modificar para chamar uma
-      // funcao  addicionar um establecimento
-      // ao banco de dados sejaLocalStorage ou json-server
-      // console.log(establecimento);
-      postEstablecimento(establecimento);
-      //limpar formulario
-      setValidated(false);
-      event.target.reset();
-    }
-  };
-  // Limpa formulario utilizando referencia
-  const handleLimpar = (event) => {
-    event.preventDefault();
-    formCadEstRef.current.reset();
-  };
+  useEffect(() => {
+    setValidated(false);
+  }, []);
 
   return (
     <Form
       ref={formCadEstRef}
       noValidate
       validated={validated}
-      onSubmit={handleSubmit}
+      onSubmit={handleSubmitEstablecimento}
     >
       <div className="d-flex justify-content-center">
         <h3>Cadastro de Establecimento</h3>
@@ -158,7 +93,7 @@ const FormCadastroEstablecimento = () => {
         <Form.Group as={Col} md="3" controlId="numero">
           <Form.Label>Numero</Form.Label>
           <Form.Control required type="number" placeholder="9999" />
-          <Form.Control.Feedback>OK</Form.Control.Feedback>
+          <Form.Control.Feedback>OK</Form.Control.Feedback>const
           <Form.Control.Feedback type="invalid">
             Por favor preencha este campo com o Numero.
           </Form.Control.Feedback>
@@ -225,7 +160,7 @@ const FormCadastroEstablecimento = () => {
       </Row>
       <div className="d-flex justify-content-end">
         <Button
-          onClick={handleLimpar}
+          onClick={(e)=>handleLimpar(e,formCadEstRef)}
           className="m-0"
           variant="outline-secondary"
           type="button"

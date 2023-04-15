@@ -1,75 +1,21 @@
-import React from "react";
-import { useState, useRef } from "react";
+import React, {  useRef , useEffect} from "react";
 import { Button, Row, Col, Form } from "react-bootstrap";
-import axios from "axios";
-
+import { useContexto } from "../context/useContexto";
 const FormCadastroProduto = () => {
-  const [validated, setValidated] = useState(false);
+
   const formCadPrdRef = useRef(null);
+  const {handleSubmitProduto, validated, handleLimpar, setValidated } = useContexto();
 
-  //funcao para submeter formulario com axios e json-server
-  const postProduto = (produto) => {
-    axios.post('http://localhost:3000/produtos', produto)
-      .then((response) => {
-        alert(`Produto  ${produto.medicamento} foi adiccionado!`);
-
-        console.log(response.data);
-      })
-      .catch((error) => {
-        alert(`Infelizmente o roduto  ${produto.medicamento} não foi adiccionado!`);
-        console.log(error);
-      });
-  };
-
-  const handleSubmit = (event) => {
-    const form = event.currentTarget;
-    let produto;
-    //formulario nao valido
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    //mostra os errores dos imputs no formulario
-    setValidated(true);
-    event.preventDefault();
-
-    //quando formulario e valido cria um objeto establecimiento para   ser guardado na base de dados
-
-    if (form.checkValidity() === true) {
-      event.preventDefault();
-    //captura de dados do formulario para criaçao de objeto produto
-  
-      produto = {
-        id: (event.target.elements["medicamento"].value )+ (event.target.elements["laboratorio"].value )+ (event.target.elements["dosagem"].value),
-        medicamento: event.target.elements["medicamento"].value,
-        laboratorio: event.target.elements["laboratorio"].value,
-        dosagem: event.target.elements["dosagem"].value,
-        valorUnitario: event.target.elements["valorUnitario"].value,
-        tipo: event.target.elements["tipo"].value,
-        descricao: event.target.elements["descricao"].value,
-        //poderia se desenvolver um sistema para upload de imagem
-        imagem: "https://img.freepik.com/psd-gratuitas/marca-de-medicacao-e-maquete-de-embalagem_53876-65886.jpg?w=740&t=st=1681400504~exp=1681401104~hmac=37fc5b256fc392531a8a5ce3317a2aee9b9da27aa9ea9e05436b106bda239976",
-
-      };
-      // post produto na base de dados fake json-server
-      postProduto(produto);
-      //limpar formulario
-      setValidated(false);
-      event.target.reset();
-    }
-  };
-  // Limpa formulario utilizando referencia
-  const handleLimpar = (event) => {
-    event.preventDefault();
-    formCadPrdRef.current.reset();
-  };
+  useEffect(() => {
+    setValidated(false);
+  }, []);
 
   return (
     <Form
       ref={formCadPrdRef}
       noValidate
       validated={validated}
-      onSubmit={handleSubmit}
+      onSubmit={handleSubmitProduto}
     >
       <div className="d-flex justify-content-center">
         <h3>Cadastro de Medicamento</h3>
@@ -147,7 +93,7 @@ const FormCadastroProduto = () => {
 
       <div className="d-flex justify-content-end">
         <Button
-          onClick={handleLimpar}
+          onClick={(e)=>handleLimpar(e,formCadPrdRef)}
           className="m-0"
           variant="outline-secondary"
           type="button"
