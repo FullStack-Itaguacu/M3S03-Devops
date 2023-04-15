@@ -3,14 +3,24 @@ import { useState } from "react";
 import axios from "axios";
 
 export const appContext = createContext();
-
+//===PROVIDER
 function ContextProvider({ children }) {
+  //START====Cadastro de Establecimentos=====================>>>>>
+
   const [establecimentosState, setEstablecimentosState] = useState([]);
+  const [logadouro, setLogadouro] = useState("");
+  const [cidade, setCidade] = useState("");
+  const [estado, setEstado] = useState("");
+  const [bairro, setBairro] = useState("");
+  const [cep, setCep] = useState("");
+
   const [validated, setValidated] = useState(false);
 
+  //funcao para obter establecimentos do banco de dados
   function getEstablecimentos() {
     return establecimentosState;
   }
+  //funcao para carregar establecimentos do banco de dados
   function loadEstablecimentos() {
     axios
       .get("http://localhost:3000/establecimentos")
@@ -21,7 +31,7 @@ function ContextProvider({ children }) {
         console.log(error);
       });
   }
-
+  //funcao para adicionar um establecimento ao banco de dados
   const postEstablecimento = (establecimento) => {
     axios
       .post("http://localhost:3000/establecimentos", establecimento)
@@ -39,6 +49,7 @@ function ContextProvider({ children }) {
         console.log(error);
       });
   };
+  //funcao para submeter formulario de novo establecimento
   const handleSubmitEstablecimento = (event) => {
     const form = event.currentTarget;
     let establecimento;
@@ -85,11 +96,17 @@ function ContextProvider({ children }) {
     }
   };
   // Limpa formulario utilizando referencia
-  function handleLimpar  (event, ref)  {
+  function handleLimpar(event, ref) {
     event.preventDefault();
     ref.current.reset();
-  };
-  //funcao para submeter formulario com axios e json-server
+    setLogadouro("");
+    setCidade("");
+    setEstado("");
+    setBairro("");
+    setCep("");
+    setValidated(false);
+  }
+  //funcao para adicionar um novo produto no banco de dados
   const postProduto = (produto) => {
     axios
       .post("http://localhost:3000/produtos", produto)
@@ -105,6 +122,7 @@ function ContextProvider({ children }) {
         console.log(error);
       });
   };
+  //funcao para submeter formulario de novo produto
   const handleSubmitProduto = (event) => {
     const form = event.currentTarget;
     let produto;
@@ -121,10 +139,13 @@ function ContextProvider({ children }) {
 
     if (form.checkValidity() === true) {
       event.preventDefault();
-    //captura de dados do formulario para criaçao de objeto produto
-  
+      //captura de dados do formulario para criaçao de objeto produto
+
       produto = {
-        id: (event.target.elements["medicamento"].value )+ (event.target.elements["laboratorio"].value )+ (event.target.elements["dosagem"].value),
+        id:
+          event.target.elements["medicamento"].value +
+          event.target.elements["laboratorio"].value +
+          event.target.elements["dosagem"].value,
         medicamento: event.target.elements["medicamento"].value,
         laboratorio: event.target.elements["laboratorio"].value,
         dosagem: event.target.elements["dosagem"].value,
@@ -132,8 +153,8 @@ function ContextProvider({ children }) {
         tipo: event.target.elements["tipo"].value,
         descricao: event.target.elements["descricao"].value,
         //poderia se desenvolver um sistema para upload de imagem
-        imagem: "https://img.freepik.com/psd-gratuitas/marca-de-medicacao-e-maquete-de-embalagem_53876-65886.jpg?w=740&t=st=1681400504~exp=1681401104~hmac=37fc5b256fc392531a8a5ce3317a2aee9b9da27aa9ea9e05436b106bda239976",
-
+        imagem:
+          "https://img.freepik.com/psd-gratuitas/marca-de-medicacao-e-maquete-de-embalagem_53876-65886.jpg?w=740&t=st=1681400504~exp=1681401104~hmac=37fc5b256fc392531a8a5ce3317a2aee9b9da27aa9ea9e05436b106bda239976",
       };
       // post produto na base de dados fake json-server
       postProduto(produto);
@@ -142,6 +163,29 @@ function ContextProvider({ children }) {
       event.target.reset();
     }
   };
+  //funcao para atualizar os campos do formulario de establecimentos
+  const atualizarCampos = (codigoPostal) => {
+    axios
+      .get(`https://viacep.com.br/ws/${codigoPostal}/json/`)
+      .then((response) => {
+        const { data } = response;
+        setLogadouro(data.logradouro);
+        setCidade(data.localidade);
+        setEstado(data.uf);
+        setBairro(data.bairro);
+      })
+      .catch((error) => {
+        console.error("Error al obtener información del código postal:", error);
+      });
+  };
+  //funcao para capturar o codigo postal do formulario de establecimentos
+  const handleCodigoPostalChange = (e) => {
+    const novoCodigoPostal = e.target.value;
+    console.log(novoCodigoPostal);
+    setCep(novoCodigoPostal);
+    atualizarCampos(novoCodigoPostal);
+  };
+
   const value = {
     getEstablecimentos,
     loadEstablecimentos,
@@ -151,8 +195,16 @@ function ContextProvider({ children }) {
     validated,
     setValidated,
     postProduto,
-    handleSubmitProduto
+    handleSubmitProduto,
+    logadouro,
+    cidade,
+    estado,
+    bairro,
+    cep,
+    atualizarCampos,
+    handleCodigoPostalChange,
   };
+  //retorna o contexto
   return <appContext.Provider value={value}>{children}</appContext.Provider>;
 }
 
