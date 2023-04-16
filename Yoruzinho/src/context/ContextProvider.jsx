@@ -13,7 +13,7 @@ function ContextProvider({ children }) {
   const [estado, setEstado] = useState("");
   const [bairro, setBairro] = useState("");
   const [cep, setCep] = useState("");
-
+  //controla o estado de validacao do formulario
   const [validated, setValidated] = useState(false);
 
   //funcao para obter establecimentos do banco de dados
@@ -186,6 +186,35 @@ function ContextProvider({ children }) {
     atualizarCampos(novoCodigoPostal);
   };
 
+  //controla o estado de login
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  function login() {
+    setLoggedIn(true);
+    console.log("login");
+  }
+
+  function logout() {
+    setLoggedIn(false);
+    console.log("logout");
+  }
+  //funcao para validar senha
+  function validaSenha(senha) {
+    const regex = /^(?=.*[0-9])(?=.*[a-zA-Z\u00C0-\u00FF])[a-zA-Z0-9\u00C0-\u00FF]{8,}$/;
+    return regex.test(senha);
+  }
+  
+
+  //funcao  de validacao de usuario
+  const validarUsuario = (email, senha) => {
+    if (email && validaSenha(senha)) {
+      login();
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   const value = {
     getEstablecimentos,
     loadEstablecimentos,
@@ -203,6 +232,11 @@ function ContextProvider({ children }) {
     cep,
     atualizarCampos,
     handleCodigoPostalChange,
+    login,
+    logout,
+    loggedIn,
+    validaSenha,
+    validarUsuario,
   };
   //retorna o contexto
   return <appContext.Provider value={value}>{children}</appContext.Provider>;
