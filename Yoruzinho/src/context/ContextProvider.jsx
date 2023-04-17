@@ -5,7 +5,6 @@ import axios from "axios";
 export const appContext = createContext();
 //===PROVIDER
 function ContextProvider({ children }) {
-  //START====Cadastro de Establecimentos=====================>>>>>
 
   const [establecimentosState, setEstablecimentosState] = useState([]);
   const [logadouro, setLogadouro] = useState("");
@@ -13,8 +12,13 @@ function ContextProvider({ children }) {
   const [estado, setEstado] = useState("");
   const [bairro, setBairro] = useState("");
   const [cep, setCep] = useState("");
-  //controla o estado de validacao do formulario
+  const [produtos, setProdutos] = useState([]);
+  const [produtoBuscados, setProdutoBuscados] = useState([]);  
+  //controla o estado de validacao dos formularios controlados
   const [validated, setValidated] = useState(false);
+  //controla o estado de login para as rotas privadas
+  const [loggedIn, setLoggedIn] = useState(false);
+
 
   //funcao para obter establecimentos do banco de dados
   function getEstablecimentos() {
@@ -39,8 +43,6 @@ function ContextProvider({ children }) {
         alert(
           `Establecimento  ${establecimento.nomeFantasia} foi adiccionado!`
         );
-
-        console.log(response.data);
       })
       .catch((error) => {
         alert(
@@ -62,8 +64,7 @@ function ContextProvider({ children }) {
     setValidated(true);
     event.preventDefault();
 
-    //quando formulario e valido cria um objeto establecimiento para   ser guardado na base de dados
-
+    //quando formulario e valido cria um objeto establecimiento para ser guardado na base de dados
     if (form.checkValidity() === true) {
       event.preventDefault();
       //captura de dados do formulario para criaçao de objeto establecimento
@@ -112,8 +113,6 @@ function ContextProvider({ children }) {
       .post("http://localhost:3000/produtos", produto)
       .then((response) => {
         alert(`Produto  ${produto.medicamento} foi adiccionado!`);
-
-        console.log(response.data);
       })
       .catch((error) => {
         alert(
@@ -134,13 +133,10 @@ function ContextProvider({ children }) {
     //mostra os errores dos imputs no formulario
     setValidated(true);
     event.preventDefault();
-
     //quando formulario e valido cria um objeto establecimiento para   ser guardado na base de dados
-
     if (form.checkValidity() === true) {
       event.preventDefault();
       //captura de dados do formulario para criaçao de objeto produto
-
       produto = {
         id:
           event.target.elements["medicamento"].value +
@@ -187,7 +183,6 @@ function ContextProvider({ children }) {
   };
 
   //controla o estado de login
-  const [loggedIn, setLoggedIn] = useState(false);
 
   function login() {
     setLoggedIn(true);
@@ -200,10 +195,10 @@ function ContextProvider({ children }) {
   }
   //funcao para validar senha
   function validaSenha(senha) {
-    const regex = /^(?=.*[0-9])(?=.*[a-zA-Z\u00C0-\u00FF])[a-zA-Z0-9\u00C0-\u00FF]{8,}$/;
+    const regex =
+      /^(?=.*[0-9])(?=.*[a-zA-Z\u00C0-\u00FF])[a-zA-Z0-9\u00C0-\u00FF]{8,}$/;
     return regex.test(senha);
   }
-  
 
   //funcao  de validacao de usuario
   const validarUsuario = (email, senha) => {
@@ -213,6 +208,32 @@ function ContextProvider({ children }) {
     } else {
       return false;
     }
+  };
+
+  //funcao para obter todos os produtos
+  const getProdutos = () => {
+    axios
+      .get("http://localhost:3000/produtos")
+      .then((response) => {
+        setProdutos(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  //funcao  busca um produto pelo nome
+  const handleSubmitBuscarProduto = (event) => {
+    event.preventDefault();
+    //obtem o valor do input
+    const buscar = event.target.elements["medicamentoBuscado"].value;
+    //busca o produto no array
+    const busqueda = produtos.filter((produto) => {
+      //se tiver algo no input retorna o/os produto/s que contem a sequencia de caracteres do input
+      //toLowerCase() transforma tudo em minusculo para nao dar erro de case sensitive
+      return produto.medicamento.toLowerCase().includes(buscar.toLowerCase());
+    });
+    //seta o array de produtos buscados
+    setProdutoBuscados(busqueda);
   };
 
   const value = {
@@ -237,6 +258,11 @@ function ContextProvider({ children }) {
     loggedIn,
     validaSenha,
     validarUsuario,
+    produtos,
+    produtoBuscados,
+    handleSubmitBuscarProduto,
+    getProdutos,
+    setProdutoBuscados,
   };
   //retorna o contexto
   return <appContext.Provider value={value}>{children}</appContext.Provider>;
