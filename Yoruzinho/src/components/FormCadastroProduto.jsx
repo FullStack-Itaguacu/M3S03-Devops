@@ -70,6 +70,7 @@ const FormCadastroProduto = () => {
                 required
                 type="number"
                 placeholder="Valor Unitário"
+                step="0.01"
             />
             <Form.Control.Feedback>OK</Form.Control.Feedback>
             <Form.Control.Feedback type="invalid">
