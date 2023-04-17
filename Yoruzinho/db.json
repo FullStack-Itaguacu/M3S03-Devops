@@ -49,6 +49,16 @@
       "tipo": "Medicamento Controlado",
       "descricao": "54",
       "imagem": "https://img.freepik.com/psd-gratuitas/marca-de-medicacao-e-maquete-de-embalagem_53876-65886.jpg?w=740&t=st=1681400504~exp=1681401104~hmac=37fc5b256fc392531a8a5ce3317a2aee9b9da27aa9ea9e05436b106bda239976"
+    },
+    {
+      "id": "AspirinaBayer25mg",
+      "medicamento": "Aspirina",
+      "laboratorio": "Bayer",
+      "dosagem": "25mg",
+      "valorUnitario": "58.56",
+      "tipo": "Medicamento Comum",
+      "descricao": "O comprimido de Aspirina® (ácido acetilsalicílico) é um medicamento para dores de cabeça de intensidade leve a moderada.\nSaiba o que você precisa saber sobre o comprimido de Aspirina®, desde o princípio ativo até a administração adequada, a seguir.",
+      "imagem": "https://img.freepik.com/psd-gratuitas/marca-de-medicacao-e-maquete-de-embalagem_53876-65886.jpg?w=740&t=st=1681400504~exp=1681401104~hmac=37fc5b256fc392531a8a5ce3317a2aee9b9da27aa9ea9e05436b106bda239976"
     }
   ],
   "establecimentos": [
