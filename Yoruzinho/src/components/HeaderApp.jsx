@@ -7,7 +7,7 @@ import LogoHeader from "../assets/LogoHeader.png";
 const HeaderApp = () => {
   const { logout } = useContexto();
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" fixed='top'>
+    <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
       <Container>
         <Navbar.Brand>
           <img
