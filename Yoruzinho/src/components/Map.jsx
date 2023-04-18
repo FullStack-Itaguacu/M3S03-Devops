@@ -25,7 +25,7 @@ export const Map = () => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      //recorre a la lista de establecimientos y crea un marcador por cada uno
+      {/*recorre a la lista de establecimientos y crea un marcador por cada uno */}
       {establecimentos.map((establecimento) => (
         <Marker
           key={establecimento.cnpj}
