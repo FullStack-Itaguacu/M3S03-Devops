@@ -4,61 +4,21 @@
       "id": "AspirinaBayer10mg",
       "medicamento": "Aspirina",
       "laboratorio": "Bayer",
-      "dosagem": "10mg",
+      "dosagem": "500mg",
       "valorUnitario": "13",
       "tipo": "Medicamento Comum",
-      "descricao": "uma descricao",
-      "imagem": "https://img.freepik.com/psd-gratuitas/marca-de-medicacao-e-maquete-de-embalagem_53876-65886.jpg?w=740&t=st=1681400504~exp=1681401104~hmac=37fc5b256fc392531a8a5ce3317a2aee9b9da27aa9ea9e05436b106bda239976"
+      "descricao": "Aspirina é um medicamento anti-inflamatório não esteroidal (AINE) usado para tratar dor, febre, inflamação e coágulos sanguíneos. Também é usado para tratar a dor de cabeça, artrite, dor muscular, dor nas costas, febre reumática e dor de dente.",
+      "imagem": "https://img.freepik.com/free-photo/first-medical-aid-symbol-form-jar-with-cross-generative-ai_169016-29777.jpg?w=900&t=st=1681784879~exp=1681785479~hmac=a6c5d4e3a67c4e2ed9357fbec7ccd4ca8d0fbaa343471047d417b509994ec140"
     },
     {
-      "id": "DipironaBayer500mg",
-      "medicamento": "Dipirona",
-      "laboratorio": "Bayer",
-      "dosagem": "500mg",
-      "valorUnitario": "15",
+      "id": "DomperidonaMedley1mg/mL",
+      "medicamento": "Domperidona",
+      "laboratorio": "Medley",
+      "dosagem": "1mg/mL",
+      "valorUnitario": "6.59",
       "tipo": "Medicamento Comum",
-      "descricao": "outra descriçao",
-      "imagem": "https://img.freepik.com/psd-gratuitas/marca-de-medicacao-e-maquete-de-embalagem_53876-65886.jpg?w=740&t=st=1681400504~exp=1681401104~hmac=37fc5b256fc392531a8a5ce3317a2aee9b9da27aa9ea9e05436b106bda239976"
-    },
-    {
-      "id": "AspirinaBayersdf",
-      "medicamento": "Aspirina",
-      "laboratorio": "Bayer",
-      "dosagem": "sdf",
-      "valorUnitario": "23",
-      "tipo": "Medicamento Controlado",
-      "descricao": "123",
-      "imagem": "https://img.freepik.com/psd-gratuitas/marca-de-medicacao-e-maquete-de-embalagem_53876-65886.jpg?w=740&t=st=1681400504~exp=1681401104~hmac=37fc5b256fc392531a8a5ce3317a2aee9b9da27aa9ea9e05436b106bda239976"
-    },
-    {
-      "id": "AspirinaBayerssvsdvsd",
-      "medicamento": "Aspirina",
-      "laboratorio": "Bayer",
-      "dosagem": "ssvsdvsd",
-      "valorUnitario": "5",
-      "tipo": "Medicamento Comum",
-      "descricao": "55",
-      "imagem": "https://img.freepik.com/psd-gratuitas/marca-de-medicacao-e-maquete-de-embalagem_53876-65886.jpg?w=740&t=st=1681400504~exp=1681401104~hmac=37fc5b256fc392531a8a5ce3317a2aee9b9da27aa9ea9e05436b106bda239976"
-    },
-    {
-      "id": "AspirinakBayer500mg",
-      "medicamento": "Aspirinak",
-      "laboratorio": "Bayer",
-      "dosagem": "500mg",
-      "valorUnitario": "54",
-      "tipo": "Medicamento Controlado",
-      "descricao": "54",
-      "imagem": "https://img.freepik.com/psd-gratuitas/marca-de-medicacao-e-maquete-de-embalagem_53876-65886.jpg?w=740&t=st=1681400504~exp=1681401104~hmac=37fc5b256fc392531a8a5ce3317a2aee9b9da27aa9ea9e05436b106bda239976"
-    },
-    {
-      "id": "AspirinaBayer25mg",
-      "medicamento": "Aspirina",
-      "laboratorio": "Bayer",
-      "dosagem": "25mg",
-      "valorUnitario": "58.56",
-      "tipo": "Medicamento Comum",
-      "descricao": "O comprimido de Aspirina® (ácido acetilsalicílico) é um medicamento para dores de cabeça de intensidade leve a moderada.\nSaiba o que você precisa saber sobre o comprimido de Aspirina®, desde o princípio ativo até a administração adequada, a seguir.",
-      "imagem": "https://img.freepik.com/psd-gratuitas/marca-de-medicacao-e-maquete-de-embalagem_53876-65886.jpg?w=740&t=st=1681400504~exp=1681401104~hmac=37fc5b256fc392531a8a5ce3317a2aee9b9da27aa9ea9e05436b106bda239976"
+      "descricao": "A Domperidona é um medicamento utilizado no tratamento da má digestão, tornando mais rápida a movimentação dos alimentos no esôfago, estômago e intestinos. Sua ação evita os sintomas de refluxo, dor abdominal alta, desconforto por gases e azia. Ainda é eficaz para tratar e evitar o enjoo, a náusea e o vômito.",
+      "imagem": "https://img.freepik.com/free-photo/first-medical-aid-symbol-form-jar-with-cross-generative-ai_169016-29777.jpg?w=900&t=st=1681784879~exp=1681785479~hmac=a6c5d4e3a67c4e2ed9357fbec7ccd4ca8d0fbaa343471047d417b509994ec140"
     }
   ],
   "establecimentos": [
@@ -116,24 +76,7 @@
       "latitude": "-27.5959",
       "longitude": "-48.5566"
     },
-    {
-      "id": "999",
-      "razaoSocial": "a",
-      "cnpj": "999",
-      "nomeFantasia": "a",
-      "email": "99@q",
-      "telefone": "99",
-      "celular": "999",
-      "cep": "9",
-      "logradouro": "999",
-      "numero": "99",
-      "complemento": "99",
-      "bairro": "99",
-      "cidade": "99",
-      "estado": "99",
-      "latitude": "-27.5965",
-      "longitude": "-48.5602"
-    },
+    
     {
       "id": "8886532521",
       "razaoSocial": "LabPharmacy inc ",
@@ -152,9 +95,6 @@
       "latitude": "-27.4539",
       "longitude": "-48.4199"
     }
-  ],
-  "users": {
-    "email": "chavetasoft@gmail.com",
-    "senha": "123456"
-  }
+  ]
+
 }

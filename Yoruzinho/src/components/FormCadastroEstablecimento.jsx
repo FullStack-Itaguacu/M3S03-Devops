@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import { Button, Row, Col, Form } from "react-bootstrap";
 import { useContexto } from "../context/useContexto";
+import { SCContainerForm } from "../styles/styles";
+
 
 const FormCadastroEstablecimento = () => {
   const formCadEstRef = useRef(null);
@@ -22,6 +24,8 @@ const FormCadastroEstablecimento = () => {
   }, []);
 
   return (
+<SCContainerForm>
+
     <Form
       ref={formCadEstRef}
       noValidate
@@ -215,6 +219,7 @@ const FormCadastroEstablecimento = () => {
         </Button>
       </div>{" "}
     </Form>
+    </SCContainerForm>
   );
 };
 export default FormCadastroEstablecimento;
