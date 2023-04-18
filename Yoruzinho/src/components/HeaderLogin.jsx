@@ -1,12 +1,20 @@
 import React from 'react'
 import { Navbar, Container } from 'react-bootstrap'
-import {MdLocalPharmacy} from 'react-icons/md'
+import LogoHeader from "../assets/LogoHeader.png";
+
 
 const HeaderLogin = () => {
   return (
     <Navbar  bg="dark" variant="dark" expand="lg">
     <Container>
-      <Navbar.Brand ><MdLocalPharmacy/>   LABPharmacy Inc.</Navbar.Brand>
+      <Navbar.Brand >
+      <img
+            src={LogoHeader}
+            height="30"
+            className="d-inline-block align-top"
+            alt="PHARMACY CENTRAL SYSTEM"
+          />
+      </Navbar.Brand>
     </Container>
   </Navbar>
   )
