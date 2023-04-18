@@ -149,8 +149,7 @@ function ContextProvider({ children }) {
         tipo: event.target.elements["tipo"].value,
         descricao: event.target.elements["descricao"].value,
         //poderia se desenvolver um sistema para upload de imagem
-        imagem:
-          "https://img.freepik.com/psd-gratuitas/marca-de-medicacao-e-maquete-de-embalagem_53876-65886.jpg?w=740&t=st=1681400504~exp=1681401104~hmac=37fc5b256fc392531a8a5ce3317a2aee9b9da27aa9ea9e05436b106bda239976",
+        imagem: 'https://img.freepik.com/free-photo/first-medical-aid-symbol-form-jar-with-cross-generative-ai_169016-29777.jpg?w=900&t=st=1681784879~exp=1681785479~hmac=a6c5d4e3a67c4e2ed9357fbec7ccd4ca8d0fbaa343471047d417b509994ec140'
       };
       // post produto na base de dados fake json-server
       postProduto(produto);
