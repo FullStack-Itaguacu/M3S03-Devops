@@ -8,7 +8,7 @@ farmácias. O seu perfil chamou a atenção dos gestores para a criação do pro
 do sistema que deverá ser codificado em React.</h5>
 
 <h2>OBJETIVO</h2>
-<h5>● Criar um protótipo front-end do sistema Pharmacy Central System, utilizando React.
+<h5>Criar um protótipo front-end do sistema Pharmacy Central System, utilizando React.
 </h5>
 <h1>
 Minha solução da proposta
@@ -43,6 +43,12 @@ Yoruzinho Gestão
 <h4>
 Yoruzinho é uma palavra composta , Yoru de "yoruga" que e uma giria uruguaia e significa uruguaio, e zinho pelo diminutivo do portugues  , em homenagem ao minha querida terra natal e ao Brasil,para o projeto final do curso , a Yoruzinho está configurada para trabalhar com farmácias e medicamentos e chama-se Pharmacy Central System, mas isso pode ser facilmente configurado de acordo com a sua atividade no mercado.
 <h4>
+<h2>
+Deploy
+</h2>
+<h5>
+<a href="https://labpharmacyinc-pharmacy-central-syste.netlify.app">Visite a demo!</a>
+</h5>
 <h2>
 Tecnologias utilizadas
 </h2>
