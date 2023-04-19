@@ -27,7 +27,7 @@ function ContextProvider({ children }) {
   //funcao para carregar establecimentos do banco de dados
   function loadEstablecimentos() {
     axios
-      .get("http://localhost:3000/establecimentos")
+      .get("https://pharmacy-central-system.herokuapp.com/establecimentos")
       .then((response) => {
         setEstablecimentosState(response.data);
       })
@@ -38,7 +38,7 @@ function ContextProvider({ children }) {
   //funcao para adicionar um establecimento ao banco de dados
   const postEstablecimento = (establecimento) => {
     axios
-      .post("http://localhost:3000/establecimentos", establecimento)
+      .post("https://pharmacy-central-system.herokuapp.com/establecimentos", establecimento)
       .then((response) => {
         alert(
           `Establecimento  ${establecimento.nomeFantasia} foi adiccionado!`
@@ -110,7 +110,7 @@ function ContextProvider({ children }) {
   //funcao para adicionar um novo produto no banco de dados
   const postProduto = (produto) => {
     axios
-      .post("http://localhost:3000/produtos", produto)
+      .post("https://pharmacy-central-system.herokuapp.com/produtos", produto)
       .then((response) => {
         alert(`Produto  ${produto.medicamento} foi adiccionado!`);
       })
@@ -212,7 +212,7 @@ function ContextProvider({ children }) {
   //funcao para obter todos os produtos
   const getProdutos = () => {
     axios
-      .get("http://localhost:3000/produtos")
+      .get("https://pharmacy-central-system.herokuapp.com/produtos")
       .then((response) => {
         setProdutos(response.data);
       })
