@@ -183,7 +183,7 @@ const FormCadastroEstablecimento = () => {
           <Form.Control
             required
             type="number"
-            step="0.0001"
+            step="0.00000001"
             placeholder="Latitude"
           />
           <Form.Control.Feedback>OK</Form.Control.Feedback>
@@ -196,7 +196,7 @@ const FormCadastroEstablecimento = () => {
           <Form.Control
             required
             type="number"
-            step="0.0001"
+            step="0.00000001"
             placeholder="Longitude"
           />
           <Form.Control.Feedback>OK</Form.Control.Feedback>
