@@ -1,6 +1,7 @@
 <h1 align="center"> Projeto-FrontEnd </h1>
 <h4 align="center"> FullStack [Itaguaçu] Módulo 1 - Projeto Avaliativo </h4>
 <h2>INTRODUÇÃO</h2>
+
 <h5>A LABPharmacy Inc, uma renomada empresa do ramo farmacêutico, está expandindo a sua
 rede de lojas. Por conta da expansão, o time de gestão necessita da criação de um sistema
 online, intitulado Pharmacy Central System, para gerenciamento de medicamentos e
@@ -50,38 +51,65 @@ Deploy
 <a href="https://labpharmacyinc-pharmacy-central-syste.netlify.app">Visite a demo!</a>
 </h5>
 <h2>
-<h1>Como Utilizar</h1>  
-    
-  <h2>Vamos clonar o repositiorio para nosso PC</h2>
-  <h3>Abra um terminal e execute os siguientes comandos...</h3>
+<h1>Como utilizar</h1>  
+  <h2>Vamos clonar o repositório para nosso PC</h2>
+  <h3>Abra um terminal e execute os seguintes comandos...</h3>
     <h4>git clone git@github.com:Luis-Vilar/Projeto-FrontEnd.git</h4>
-  <h6>precisa de chave ssh.. si nao tiver pode seguir o tutorial no siguente Link</h6>
-  
-  <a href="https://docs.github.com/pt/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">Tutorial</a>
-    <h4>cd Projeto-FrontEnd/Yoruzinho</h4>
-    <h4>yarn</h4>
-    <h4>yarn dev</h4>
-  <h5>devera receber uma saida do terminal com o endereco local para accsessar ao site como a siguiente</h5>
+  <h6>É necessário ter uma chave SSH. Se não tiver, siga o tutorial no seguinte link:</h6>
+<a href="https://docs.github.com/pt/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">Tutorial</a>
+<h4>cd Projeto-FrontEnd/Yoruzinho</h4>
+<h4>yarn</h4>
+<h4>yarn dev</h4>
+
+  <h5>Você deverá receber uma saída do terminal com o endereço local para acessar o site, como o seguinte:</h5>
   <h6>
  -$ yarn dev
  -yarn run v1.22.19
   $ vite
+VITE v4.2.1 pronto em 1127 ms
 
-  VITE v4.2.1  ready in 1127 ms
+Local: http://localhost:5173/
 
-  -  Local:   http://localhost:5173/
-  -  Network: use --host to expose
-  -  press h to show help
+Network: use --host to expose
 
-  
+press h to show help
+
   </h6>
+  <h4>Abra seu navegador e copie e cole o endereço (por padrão é http://localhost:5173/)</h4>
+  <h4>Você deverá ver uma tela como a seguinte:</h4> 
+
+![image](https://user-images.githubusercontent.com/124309725/233236992-850a2276-4540-497b-84ac-78fb77f5f18f.jpg)
   
-  <h4>Abra seu navegador , e copie e cole o endereço ( por default e  http://localhost:5173/ )</h4>
-  
+<h3>O e-mail pode ser qualquer um, desde que tenha um formato válido. Ainda não há suporte para usuários cadastrados.</h3>
+<h3>A senha deve possuir 8 ou mais caracteres e pelo menos uma letra maiúscula ou minúscula</h3>
+<h3>Se você fizer o login corretamente, será redirecionado para a próxima tela, onde teremos um mapa com as farmácias cadastradas.<h3>  
+    
+![image](https://user-images.githubusercontent.com/124309725/233237979-62fe8d45-355c-44c5-aa0f-5924551f7354.jpg)
+    
+<h3>Nos ícones que aparecem no mapa, ao clicar, será renderizado um modal com todas as informações cadastradas. Também há um hiperlink que, caso tenha um celular cadastrado e possua WhatsApp, você será redirecionado para um novo chat com o número cadastrado. Segue a próxima imagem.</h3>
+    
+![image](https://user-images.githubusercontent.com/124309725/233238873-d3b4fd28-fa24-4146-823a-48716ff9ca86.jpg)
+ 
+<h3>Nos formulários de cadastro, os campos são controlados. Há alguns opcionais e outros obrigatórios. No entanto, como pode ser visto, eles fornecem feedback. No formulário de estabelecimento, quando o CEP é inserido, as informações de bairro, cidade, estado e logradouro são carregadas automaticamente.</h3>
+
+![image](https://user-images.githubusercontent.com/124309725/233241423-ebf0285d-6fb9-4d59-8ddd-e7a3c9396131.jpg)
+    
+![image](https://user-images.githubusercontent.com/124309725/233241508-2ea0d3de-0c07-4a46-8f8e-9ea9b75749b2.jpg)
+    
+<h3>Quando estiver na lista de medicamentos, você poderá realizar uma busca pelo nome do medicamento. Basta digitar algumas letras e o sistema renderizará todos os medicamentos que contenham essas letras em seu nome. Veja a imagem abaixo como exemplo:</h3>
+    
+![listamedicamentos](https://user-images.githubusercontent.com/124309725/233242464-536e4937-2c7d-4295-9468-44016af3d779.jpg)
+
+<h3>Resultado de uma busca com a palavra 'as':</h3>
+    
+![buscarprodutos](https://user-images.githubusercontent.com/124309725/233242726-d47a75d4-4b62-4286-b466-77075b3e2e56.jpg)
 
 
-  
 
+    
+
+    
+<h2>
 Tecnologias utilizadas
 </h2>
 <h5>
@@ -94,8 +122,6 @@ Tecnologias utilizadas
 - React : é uma biblioteca de JavaScript para a criação de interfaces de usuário interativas. O React é utilizado em todo o seu projeto para fornecer uma experiência de usuário fluida e dinâmica.
 
 - React Bootstrap : uma biblioteca de componentes do React que se integra com o Bootstrap. É utilizado para criar componentes personalizados, como botões e cartões, que se ajustam ao estilo visual do Bootstrap.
-
-- React Icons : uma biblioteca de ícones do React que oferece uma ampla variedade de ícones personalizáveis. É utilizado para fornecer ícones na interface do usuário do seu aplicativo web.
 
 - React Leaflet : uma biblioteca de componentes do React que se integra com o Leaflet. É utilizado para criar mapas interativos em seu aplicativo web.
 
