@@ -102,8 +102,11 @@ press h to show help
 
 <h3>Resultado de uma busca com a palavra 'as':</h3>
     
-![buscarprodutos](https://user-images.githubusercontent.com/124309725/233242726-d47a75d4-4b62-4286-b466-77075b3e2e56.jpg)
-
+![image](https://user-images.githubusercontent.com/124309725/233242726-d47a75d4-4b62-4286-b466-77075b3e2e56.jpg)
+    
+<h3>Ao clicar em "ver mais", aparecerá um modal com todas as informações do medicamento, como na seguinte imagem:</h3>
+    
+![modalproduto](https://user-images.githubusercontent.com/124309725/233246256-ce8d1a9f-e083-4dd1-ae44-ec12287e2b38.jpg)
 
 
     
