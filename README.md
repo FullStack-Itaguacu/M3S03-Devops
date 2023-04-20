@@ -96,7 +96,7 @@ press h to show help
     
 ![image](https://user-images.githubusercontent.com/124309725/233241508-2ea0d3de-0c07-4a46-8f8e-9ea9b75749b2.jpg)
     
-<h3>Quando estiver na lista de medicamentos, você poderá realizar uma busca pelo nome do medicamento. Basta digitar algumas letras e o sistema renderizará todos os medicamentos que contenham essas letras em seu nome. Veja a imagem abaixo como exemplo:</h3>
+<h3>Quando estiver na lista de medicamentos, você poderá realizar uma busca pelo nome do medicamento. Basta digitar algumas letras e clickar no bottão buscar e o sistema renderizará todos os medicamentos que contenham essas letras em seu nome. Veja a imagem abaixo como exemplo:</h3>
     
 ![listamedicamentos](https://user-images.githubusercontent.com/124309725/233242464-536e4937-2c7d-4295-9468-44016af3d779.jpg)
 
