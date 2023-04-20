@@ -107,14 +107,67 @@ press h to show help
 <h3>Ao clicar em "ver mais", aparecerá um modal com todas as informações do medicamento, como na seguinte imagem:</h3>
     
 ![modalproduto](https://user-images.githubusercontent.com/124309725/233246256-ce8d1a9f-e083-4dd1-ae44-ec12287e2b38.jpg)
+    
+<h1>Criando uma API e configurando nosso app para consumi-la.</h1>
+    
+<h3>Crie uma conta na REPLIT</h3>
+    
+<a href="https://replit.com/">Click aqui</a>
+   
+
+![homereplit](https://user-images.githubusercontent.com/124309725/233482289-62cd714d-03c9-4042-be95-ea91d75977b4.jpg)
+    
+<h3>Vamos criar um novo repl com Node.js</h3>
+    
+![criar replit1](https://user-images.githubusercontent.com/124309725/233482643-ff39cc8b-bf8e-4775-a26d-7bb04a5eb71d.jpg)
+        
+![criar repl2](https://user-images.githubusercontent.com/124309725/233482961-d6a6ad46-8771-46fe-8fde-3e3be6cc1557.jpg)
+
+<h3>Edita o arquivo index.js ele deve ficar extatamente igual que a siguiente imagem :</h3>
+    
+![criar repl3](https://user-images.githubusercontent.com/124309725/233485699-6f1ac326-1043-407e-b63b-6b17c1587f69.jpg)
+
+
+<h3>Cria um arquivo de nome db.json ele deve ficar exatamente igual a siguiente foto :</h3>
+    
+  ![criar repl 4](https://user-images.githubusercontent.com/124309725/233486236-343fdb50-30ef-42c8-b288-2b4d4e5fe687.jpg)
+ 
+
+<h3>Click en Run</h3>
+    
+![run](https://user-images.githubusercontent.com/124309725/233486937-cac8bdc9-e8db-4b06-a433-b28ffbde715f.png)
 
 
     
 
+<h3>ficara assim</h3>
     
-<h2>
+![segundo run](https://user-images.githubusercontent.com/124309725/233487085-cbaae8c3-8de3-44b1-b750-3d95f7a01b64.jpg)
+    
+<h3>Copie a URL que aparece na aba WebView.. ela e o endereço do seu API, observe a siguiente foto</h3>
+    
+![urldoserver](https://user-images.githubusercontent.com/124309725/233487775-d176c68c-c243-4b02-8067-d5249bd7bab6.jpg)
+
+<h1>Pronto! seu API esta no AR!, so falta configurar a variavel no codigo do projeto que clono anteriormente</h1>
+    
+<h3>Abra seu editor de preferencia e modifique a variavel url que esta no arquivo ContextProvider.jsx na pasta context ela deve ficar entre aspas "https://sua_url.repl.co", salve o arquivo e abra um terminal .. vamos crear o deployment e rodar num servidor local..</h3>
+       
+![configde url](https://user-images.githubusercontent.com/124309725/233489982-0b9ed64a-7bd2-4953-b292-b8cb9ea42dd7.jpg)
+
+<h3>Execute os comandos yarn build e yarn preview como na siguiente foto : </h3>
+    
+![deploymentconsola](https://user-images.githubusercontent.com/124309725/233494713-97914da3-5fa9-4244-8731-f2682cf3b951.jpg)
+
+
+<h3>Agora si voce abrir um navegador web e se dirigir ao endereco que esta aparecendo no terminal que por padrão e : http://localhos:4173 
+voce podera ver o o build do Aplicativo, faza seus testes de adiccionar establecimentos e produtos e verifique que esta salvando no API os dados cadastrados caso sim voce podera subir seu app para algum servico online de Hosting.. recomendo  a Netlify com a opcão Build Manually onde so devera subir a pasta dist que foi criada quando executo o comando yarn build<h3/>
+
+
+
+    
+<h1>
 Tecnologias utilizadas
-</h2>
+</h1>
 <h5>
 
 ![image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
