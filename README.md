@@ -150,21 +150,26 @@ press h to show help
 
 <h1>Pronto! seu API esta no AR!, so falta configurar a variavel no codigo do projeto que clono anteriormente</h1>
     
-<h3>Abra seu editor de preferencia e modifique a variavel url que esta no arquivo ContextProvider.jsx na pasta context ela deve ficar entre aspas "https://sua_url.repl.co", salve o arquivo e abra um terminal .. vamos crear o deployment e rodar num servidor local..</h3>
+<h3>Por favor, abra o seu editor de preferência e modifique a variável "url" presente no arquivo ContextProvider.jsx localizado na pasta "context". Certifique-se de que a variável esteja envolta por aspas, como por exemplo "https://sua_url.repl.co". Após realizar a modificação, salve o arquivo e abra um terminal. </h3>
        
 ![configde url](https://user-images.githubusercontent.com/124309725/233489982-0b9ed64a-7bd2-4953-b292-b8cb9ea42dd7.jpg)
 
-<h3>Execute os comandos yarn build e yarn preview como na siguiente foto : </h3>
+<h3>Para criar o deployment e rodar o servidor localmente, execute os seguintes comandos:
+
+- Execute o comando "yarn build" para criar o build do aplicativo.
+
+- Em seguida, execute o comando "yarn preview" para rodar o servidor localmente.
+
+Certifique-se de que os comandos estejam sendo executados corretamente, seguindo as instruções indicadas na siguiente foto :</h3>
     
 ![deploymentconsola](https://user-images.githubusercontent.com/124309725/233494713-97914da3-5fa9-4244-8731-f2682cf3b951.jpg)
 
 
-<h3>Agora si voce abrir um navegador web e se dirigir ao endereco que esta aparecendo no terminal que por padrão e : http://localhos:4173 
-voce podera ver o o build do Aplicativo, faza seus testes de adiccionar establecimentos e produtos e verifique que esta salvando no API os dados cadastrados caso sim voce podera subir seu app para algum servico online de Hosting.. recomendo  a Netlify com a opcão Build Manually onde so devera subir a pasta dist que foi criada quando executo o comando yarn build<h3/>
+<h3>Após executar o comando adequado, será possível acessar o endereço que está sendo exibido no terminal, por padrão http://localhost:4173, por meio de um navegador web. Nesse endereço, você poderá visualizar o build do aplicativo e realizar testes, como adicionar estabelecimentos e produtos, para verificar se os dados estão sendo corretamente cadastrados no API. Caso esteja tudo correto, você poderá fazer o upload do seu aplicativo para um serviço de hospedagem online.Se você possuir conhecimentos técnicos, poderá fazer um fork deste repositório e hospedá-lo na Netlify ou o serviço de Hosting que preferir para disponibilizar seu aplicativo online de forma fácil e eficiente., a Netlify também oferece a opção de Build Manual. Para isso, basta subir apenas a pasta dist, que é criada ao executar o comando yarn build. Recomendamos a utilização da Netlify devido à sua eficiência e facilidade de uso, segue o tutorial no YouTube :
+<h3/>
+       
+[![Title](https://user-images.githubusercontent.com/124309725/233505860-c3a7a205-03b7-4198-a03c-126433d7a64b.png)](https://www.youtube.com/embed/etZ9HSUoTPU)
 
-
-
-    
 <h1>
 Tecnologias utilizadas
 </h1>
@@ -172,8 +177,8 @@ Tecnologias utilizadas
 
 ![image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 )![image](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)![image](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-)![Image](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)![image](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white
-)![image](https://img.shields.io/badge/Git-E34F26?style=for-the-badge&logo=git&logoColor=white)![image](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+)![Image](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)![image](https://img.shields.io/badge/Git-E34F26?style=for-the-badge&logo=git&logoColor=white)![image](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)![Replit](https://img.shields.io/badge/Replit-DD1200?style=for-the-badge&logo=Replit&logoColor=white)![image](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white
+)
 
 - React : é uma biblioteca de JavaScript para a criação de interfaces de usuário interativas. O React é utilizado em todo o seu projeto para fornecer uma experiência de usuário fluida e dinâmica.
 
