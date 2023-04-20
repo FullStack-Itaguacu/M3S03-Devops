@@ -5,7 +5,6 @@ import axios from "axios";
 export const appContext = createContext();
 //===PROVIDER
 function ContextProvider({ children }) {
-
   const [establecimentosState, setEstablecimentosState] = useState([]);
   const [logadouro, setLogadouro] = useState("");
   const [cidade, setCidade] = useState("");
@@ -13,12 +12,16 @@ function ContextProvider({ children }) {
   const [bairro, setBairro] = useState("");
   const [cep, setCep] = useState("");
   const [produtos, setProdutos] = useState([]);
-  const [produtoBuscados, setProdutoBuscados] = useState([]);  
+  const [produtoBuscados, setProdutoBuscados] = useState([]);
   //controla o estado de validacao dos formularios controlados
   const [validated, setValidated] = useState(false);
   //controla o estado de login para as rotas privadas
   const [loggedIn, setLoggedIn] = useState(false);
-
+  // variaves para o endereco do API
+  const url = "https://farmacia.luisfederico.repl.co";
+  // variaves para o endereco dos endpoints
+  const endpointEstablecimentos = "/establecimentos";
+  const endpointProdutos = "/produtos";
 
   //funcao para obter establecimentos do banco de dados
   function getEstablecimentos() {
@@ -27,7 +30,7 @@ function ContextProvider({ children }) {
   //funcao para carregar establecimentos do banco de dados
   function loadEstablecimentos() {
     axios
-      .get("https://pharmacy-central-system.herokuapp.com/establecimentos")
+      .get(url + endpointEstablecimentos)
       .then((response) => {
         setEstablecimentosState(response.data);
       })
@@ -38,7 +41,7 @@ function ContextProvider({ children }) {
   //funcao para adicionar um establecimento ao banco de dados
   const postEstablecimento = (establecimento) => {
     axios
-      .post("https://pharmacy-central-system.herokuapp.com/establecimentos", establecimento)
+      .post(url + endpointEstablecimentos, establecimento)
       .then((response) => {
         alert(
           `Establecimento  ${establecimento.nomeFantasia} foi adiccionado!`
@@ -110,7 +113,7 @@ function ContextProvider({ children }) {
   //funcao para adicionar um novo produto no banco de dados
   const postProduto = (produto) => {
     axios
-      .post("https://pharmacy-central-system.herokuapp.com/produtos", produto)
+      .post(url + endpointProdutos, produto)
       .then((response) => {
         alert(`Produto  ${produto.medicamento} foi adiccionado!`);
       })
@@ -149,7 +152,8 @@ function ContextProvider({ children }) {
         tipo: event.target.elements["tipo"].value,
         descricao: event.target.elements["descricao"].value,
         //poderia se desenvolver um sistema para upload de imagem
-        imagem: 'https://img.freepik.com/free-photo/first-medical-aid-symbol-form-jar-with-cross-generative-ai_169016-29777.jpg?w=900&t=st=1681784879~exp=1681785479~hmac=a6c5d4e3a67c4e2ed9357fbec7ccd4ca8d0fbaa343471047d417b509994ec140'
+        imagem:
+          "https://img.freepik.com/free-photo/first-medical-aid-symbol-form-jar-with-cross-generative-ai_169016-29777.jpg?w=900&t=st=1681784879~exp=1681785479~hmac=a6c5d4e3a67c4e2ed9357fbec7ccd4ca8d0fbaa343471047d417b509994ec140",
       };
       // post produto na base de dados fake json-server
       postProduto(produto);
@@ -212,7 +216,7 @@ function ContextProvider({ children }) {
   //funcao para obter todos os produtos
   const getProdutos = () => {
     axios
-      .get("https://pharmacy-central-system.herokuapp.com/produtos")
+      .get(url + endpointProdutos)
       .then((response) => {
         setProdutos(response.data);
       })
