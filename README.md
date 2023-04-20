@@ -50,6 +50,38 @@ Deploy
 <a href="https://labpharmacyinc-pharmacy-central-syste.netlify.app">Visite a demo!</a>
 </h5>
 <h2>
+<h1>Como Utilizar</h1>  
+    
+  <h2>Vamos clonar o repositiorio para nosso PC</h2>
+  <h3>Abra um terminal e execute os siguientes comandos...</h3>
+    <h4>git clone git@github.com:Luis-Vilar/Projeto-FrontEnd.git</h4>
+  <h6>precisa de chave ssh.. si nao tiver pode seguir o tutorial no siguente Link</h6>
+  
+  <a href="https://docs.github.com/pt/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">Tutorial</a>
+    <h4>cd Projeto-FrontEnd/Yoruzinho</h4>
+    <h4>yarn</h4>
+    <h4>yarn dev</h4>
+  <h5>devera receber uma saida do terminal com o endereco local para accsessar ao site como a siguiente</h5>
+  <h6>
+ -$ yarn dev
+ -yarn run v1.22.19
+  $ vite
+
+  VITE v4.2.1  ready in 1127 ms
+
+  -  Local:   http://localhost:5173/
+  -  Network: use --host to expose
+  -  press h to show help
+
+  
+  </h6>
+  
+  <h4>Abra seu navegador , e copie e cole o endereço ( por default e  http://localhost:5173/ )</h4>
+  
+
+
+  
+
 Tecnologias utilizadas
 </h2>
 <h5>
