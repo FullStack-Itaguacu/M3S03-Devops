@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useContexto } from "../context/useContexto";
 
 const FormLogin = () => {
-  const { login , validarSenha, validarUsuario} = useContexto();
+  const { login, validarSenha, validarUsuario } = useContexto();
 
   //funcao para redirecionar para a pagina inicial
   const redireccionar = useNavigate();
@@ -13,9 +13,7 @@ const FormLogin = () => {
     event.preventDefault();
     const email = event.target.elements["Login.email"].value;
     const senha = event.target.elements["Login.senha"].value;
-    validarUsuario(email, senha)
-      ? redireccionar("/app")
-      : alert("Senha incorreta, verificar se  possui 8 ou mais caracteres e se há pelo menos uma letra (maiúscula ou minúscula) na senha.");
+    validarUsuario(email, senha) && redireccionar("/app");
   };
 
   return (

@@ -200,12 +200,25 @@ function ContextProvider({ children }) {
   function validaSenha(senha) {
     const regex =
       /^(?=.*[0-9])(?=.*[a-zA-Z\u00C0-\u00FF])[a-zA-Z0-9\u00C0-\u00FF]{8,}$/;
+    if (!regex.test(senha)) {
+      alert(
+        "Senha incorreta, verificar se  possui 8 ou mais caracteres e se há pelo menos uma letra (maiúscula ou minúscula) na senha."
+      );
+    }
     return regex.test(senha);
+  }
+  //funcao para validar email
+  function validaEmail(email) {
+    const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    if (!regex.test(email)) {
+      alert("Email incorreto, verificar se e um e-amail valido, ex: name@example.com");
+    }
+    return regex.test(email);
   }
 
   //funcao  de validacao de usuario
   const validarUsuario = (email, senha) => {
-    if (email && validaSenha(senha)) {
+    if (validaEmail(email) && validaSenha(senha)) {
       login();
       return true;
     } else {
