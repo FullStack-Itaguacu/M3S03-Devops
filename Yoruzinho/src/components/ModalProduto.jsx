@@ -29,7 +29,7 @@ const ModalProduto = ({
         <Modal.Body>{`Descrição : ${descricao}`}</Modal.Body>
         <Modal.Body>{`Laboratório : ${laboratorio}`}</Modal.Body>
         <Modal.Body>{`Dosagem : ${dosagem}`}</Modal.Body>
-        <Modal.Body>{`Valor Unitario : R$ ${valorUnitario}`}</Modal.Body>
+        <Modal.Body>{`Valor Unitário : R$ ${valorUnitario}`}</Modal.Body>
         <Modal.Body>{`Tipo : ${tipo}`}</Modal.Body>
       </Modal>
     </>
