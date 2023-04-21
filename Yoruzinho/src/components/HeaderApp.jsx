@@ -22,10 +22,10 @@ const HeaderApp = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Link className="nav-link" to="/app">
-              Farmacias
+              Farmácias
             </Link>
             <Link className="nav-link" to="/app/cadastroestablecimento ">
-              Cadastrar Farmacia
+              Cadastrar Farmácia
             </Link>
             <Link className="nav-link" to="/app/cadastroproduto">
               Cadastrar Produto

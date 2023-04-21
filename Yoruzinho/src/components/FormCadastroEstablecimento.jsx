@@ -16,7 +16,7 @@ const FormCadastroEstablecimento = () => {
     estado,
     bairro,
     cep,
-    handleCodigoPostalChange,
+    handleCepChange,
   } = useContexto();
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const FormCadastroEstablecimento = () => {
       onSubmit={handleSubmitEstablecimento}
     >
       <div className="d-flex justify-content-center">
-        <h3>Cadastro de Establecimento</h3>
+        <h3>Cadastro de Estabelecimento</h3>
       </div>
       <Row className="mb-3">
         <Form.Group as={Col} md="4" controlId="razãosocial">
@@ -84,7 +84,7 @@ const FormCadastroEstablecimento = () => {
           <Form.Control required type="number" placeholder="DDNNNNNNNNN" />
           <Form.Control.Feedback>OK</Form.Control.Feedback>
           <Form.Control.Feedback type="invalid">
-            Por favor preencha este campo com o numero de Celualr.
+            Por favor preencha este campo com o numero de Celular.
           </Form.Control.Feedback>
         </Form.Group>
       </Row>
@@ -96,7 +96,7 @@ const FormCadastroEstablecimento = () => {
             type="number"
             placeholder="99999999"
             value={cep}
-            onChange={handleCodigoPostalChange}
+            onChange={handleCepChange}
           />
           <Form.Control.Feedback>OK</Form.Control.Feedback>
           <Form.Control.Feedback type="invalid">
