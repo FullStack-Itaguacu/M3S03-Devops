@@ -3,9 +3,9 @@ import FormCadastroProduto from '../components/FormCadastroProduto'
 
 const CadastroProduto = () => {
   return (
-    <div>
+    <>
       <FormCadastroProduto/>
-    </div>
+    </>
   )
 }
 

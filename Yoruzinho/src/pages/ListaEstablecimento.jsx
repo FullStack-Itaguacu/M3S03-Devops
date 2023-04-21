@@ -3,9 +3,9 @@ import { Map } from "../components/Map";
 
 const ListaEstablecimento = () => {
   return (
-    <div>
+    <>
       <Map />
-    </div>
+    </>
   );
 };
 
