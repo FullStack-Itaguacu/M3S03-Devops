@@ -198,6 +198,7 @@ function ContextProvider({ children }) {
   }
   //funcao para validar senha
   function validaSenha(senha) {
+    //
     const regex =
       /^(?=.*[0-9])(?=.*[a-zA-Z\u00C0-\u00FF])[a-zA-Z0-9\u00C0-\u00FF]{8,}$/;
     if (!regex.test(senha)) {
@@ -209,9 +210,12 @@ function ContextProvider({ children }) {
   }
   //funcao para validar email
   function validaEmail(email) {
+    // este regex e para validar email com dominio .com, .br, .net, etc
     const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     if (!regex.test(email)) {
-      alert("Email incorreto, verificar se e um e-amail valido, ex: name@example.com");
+      alert(
+        "Email incorreto, verificar se e um e-amail valido, ex: name@example.com"
+      );
     }
     return regex.test(email);
   }
@@ -246,10 +250,15 @@ function ContextProvider({ children }) {
     const busqueda = produtos.filter((produto) => {
       //se tiver algo no input retorna o/os produto/s que contem a sequencia de caracteres do input
       //toLowerCase() transforma tudo em minusculo para nao dar erro de case sensitive
+
       return produto.medicamento.toLowerCase().includes(buscar.toLowerCase());
     });
     //seta o array de produtos buscados
     setProdutoBuscados(busqueda);
+    //se o array de produtos buscados estiver vazio mostra um alerta
+    if (busqueda.length === 0) {
+      alert(`A busca não retornou nenhum resultado com a palavra : ${buscar} `);
+    }
   };
 
   const value = {
